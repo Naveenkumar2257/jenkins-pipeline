@@ -3,19 +3,16 @@ pipeline {
  stages {
   stage('Stage 1') {
    steps {
-    echo 'Hello world this is me!'
+    echo 'Hello world this is me hi!'
+   
+ stages {
+  stage('Build') {
+   steps {
+    sh 'echo "This is my first step"'
    }
   }
- }
-}
-stages {
- stage('Build') {
-  steps {
-   sh 'echo "This is my first step"'
-  }
- }
  stage('Test') {
-  steps
+  steps {
    sh 'echo "This is my Test step"'
   }
  }
@@ -27,5 +24,9 @@ stages {
  stage('Release') {
   steps {
    sh 'echo "This is my Release step"'
+     }
+    }
+   }
   }
  }
+}
